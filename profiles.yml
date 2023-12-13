@@ -1,0 +1,10 @@
+jaffle_shop:
+  target: default
+  outputs:
+    default:
+      type: databricks
+      schema: dbt
+      host: "{{ env_var('DBT_HOST') }}"
+      token: "{{ env_var('DBT_ACCESS_TOKEN') }}"
+      http_path: "sql/protocolv1/o/{{ env_var('DBT_ORG_ID') }}/{{ env_var('DBT_CLUSTER_ID') }}"
+      threads: 10
